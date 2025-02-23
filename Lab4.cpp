@@ -108,22 +108,21 @@ string stringReverse(string toReverse)
 //this function uses a queue to check if a string of parens is properly matched
 bool parenCheck(string toCheck)
 {
-    stack<char> checker; // Stack to track open parentheses
+    stack<char> checker;
 
     for (char c : toCheck)
     {
         if (c == '(')
         {
-            checker.push(c); // Push open parenthesis onto the stack
+            checker.push(c); 
         }
         else if (c == ')')
         {
             if (checker.empty())
             {
-                return false; // More closing parens than opening ones
+                return false; 
             }
-            checker.pop(); // Match found, pop from stack
-        }
+            checker.pop();  }
     }
 
     return checker.empty();
